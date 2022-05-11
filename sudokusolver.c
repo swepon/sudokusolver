@@ -1,6 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+void print_sudoku(int sudoku[9][9])
+{
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9; j++)
+		{
+        printf("%d  ",sudoku[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+
+
 int solved(int sudoku[9][9])
 {
    //check rows
@@ -46,11 +60,11 @@ int notrepeateddigit(int digit, int sudoku[9][9], int i, int j)
 {
 	for (int x = 0; x < 9; x++)
 	{
-		if (sudoku[i][x] == digit) //check if the digit is already in that row
+		if (sudoku[i][x] == digit) //check if the digit is already in the row
 		{
 			return 0;
 		}
-		if (sudoku[x][j] == digit) //check if the digit is already in that column
+		if (sudoku[x][j] == digit) //check if the digit is already in the column
 		{
 			return 0;
 		}
@@ -110,7 +124,8 @@ int possible(int sudoku[9][9])
 }
 
 
-void solve_sudoku(int sudoku[9][9], int depth)
+void solve_sudoku(int sudoku[9][9])
 {
    int x = possible(sudoku);
 }
+
